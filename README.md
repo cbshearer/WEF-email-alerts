@@ -1,5 +1,14 @@
 # WEF-email-alerts
-This script combined with a scheduled task will email the alert an address you specify in this script. Download the .ps1 file and save to the system that will be running the script. In my examples I will use "c:\scripts\" as the scripts directory
+
+This script is for use on a system collecting Windows Forwarded Events (Windows Event Forwarder, WEF).
+
+This script combined with a scheduled task (below) will email the alert an address you specify in this script. Download the .ps1 file and save to the system that will be running the script. In my examples I will use "c:\scripts\" as the scripts directory
+
+When the script is triggered by the schedule task, it performs the following:
+1) Collects the most recent event with id 1102 and exports it to a temporary file
+2) Converts the contents of the file to a string
+3) Deletes the temporary file
+4) sends an email message with your configured TO/FROM/SMTP parameters
 
 Configuring the Scheduled Task:
 
